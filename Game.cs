@@ -12,6 +12,7 @@ namespace Keyboard_Controlled_Menu
     class Game
     {
 
+
         public void Start()
         {
             Console.Title = "Game";
@@ -65,10 +66,10 @@ namespace Keyboard_Controlled_Menu
         private void DisplayAboutInfo()
         {
             Console.Clear();
-            Console.WriteLine("Created By Yours Truly");
-            Console.WriteLine("Sources/Assets Used Here");
-            Console.WriteLine("Just a demo");
-            Console.WriteLine("Press Any Key To Return To Main Menu");
+            Console.WriteLine("Created By Yours Truly\n");
+            Console.WriteLine("Sources/Assets Used Here\n");
+            Console.WriteLine("This is a Dungeon Application Created for Pure Enjoyment");
+            Console.WriteLine("\nPress Any Key To Return To Main Menu");
             Console.ReadKey(true);
             RunMainMenu();
         }
@@ -76,16 +77,36 @@ namespace Keyboard_Controlled_Menu
         {
             PlayerStart user = new PlayerStart();
             Console.WriteLine("\nPlease Enter Player Name...");
-            user.Name = Console.ReadLine();
-            PlayerStart user = new PlayerStart();
+            user.Name = Console.ReadLine();            
             Console.ReadLine();
             Console.Clear();
-            Console.WriteLine($"\nBlonde, greasy hair almost fully covers a strong, charming face.\n\nDarting blue eyes, set wickedly within their sockets, watch thoughtfully\nover the mountains they've shown mercy on for so long.\n\nFallen debry left a mark reaching from the right side of the forehead, running towards\nthe tip of the nose and ending on his chin leaves a tormenting burden of his unfortunate upbringing.\n\nThis is the face of {user.Name}, a true warden among humans.\nHe stands tall among others, despite his subtle frame.");
+            Console.WriteLine($"\tBlonde, greasy hair almost fully covers a strong, charming face.\n\n\tDarting blue eyes, set wickedly within their sockets, watch thoughtfully\n\tover the mountains they've shown mercy on for so long.\n\n\tFallen debry left a mark reaching from the right side of the forehead, running towards\n\tthe tip of the nose and ending on his chin leaves a tormenting burden of his unfortunate upbringing.\n\n\tThis is the face of {user.Name}, a true warden among humans.\n\tHe stands tall among others, despite his subtle frame.");
+            string media = @"
+  / \
+  | |
+  |.|
+  |.|
+  |:|      __
+,_|:|_,   /  )
+  (Oo    / _I_
+   +\ \  || __|
+      \ \||___|
+        \ /.:.\-\
+         |.:. /-----\
+         |___|::oOo::|
+         /   |:<_T_>:|
+        |_____\ ::: /
+         | |  \ \:/
+         | |   | |
+         \ /   | \___
+         / |   \_____\
+         `-'";
+            Console.WriteLine(media);
             Console.ReadLine();
             Console.Clear();
-            Console.WriteLine($"\n{user.Name} hears the hissing of fire that fills the air as he enters a mammoth room with fractured timber walls.\nDead insects cover the floor. Light seems to be eminating from glowing orbs along the wall.\n\nAs {user.Name} plunders through the room a faint noise is heard coming closer.\n\nSuddenly, a skeleton appears!!\n\n");
-
-            Random attack = new Random();
+            Console.WriteLine($"\n{user.Name} hears the hissing of fire that fills the air as he enters a mammoth room with fractured timber walls.\nDead insects cover the floor. Light seems to be eminating from glowing orbs along the wall.\n\nAs {user.Name} plunders through the room a faint noise is heard coming closer.");
+            Console.ReadKey();
+            Console.WriteLine("\n\nSuddenly, a skeleton appears!!\n\n");
             string Prompt1 = @" 
       .-.
      (o.o)
@@ -100,12 +121,19 @@ namespace Keyboard_Controlled_Menu
      () ()
      || ||
      || ||
-l42 ==' '==";
-            Skeleton skeleton = new Skeleton(2, 30, attack.Next(1, 10), Prompt1);
+l42 ==' '==";           
             Console.WriteLine(Prompt1);
+            Console.ReadLine();
 
-            // BATTLE ONE HERE
+            void BattleOne()
+            {
+                Console.WriteLine($"{user.Name} charges towards the skeleton!");
+            }
+
+            BattleOne(); // <--  BATTLE ONE HERE
+
             ExitGame();
         }
+
     }
 }

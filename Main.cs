@@ -11,7 +11,9 @@ namespace Keyboard_Controlled_Menu
     {
         static void Main(string[] args)
         {
-
+            Console.SetWindowSize(150, 65);          
+            Console.WriteLine(Console.WindowWidth);
+            Console.WriteLine(Console.WindowHeight);
             Game game = new Game();
             game.Start();
 
